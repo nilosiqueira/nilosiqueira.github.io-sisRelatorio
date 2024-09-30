@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro e Visitas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   
+  <h1>Sistema de Cadastro e Inserção de Visitas</h1>
+
+  <!-- Abas -->
+  <div class="tabs-container">
+      <div class="tab active" onclick="openTab('cadastroCliente')">Cadastro de Cliente</div>
+      <div class="tab" onclick="openTab('dadosVisita')">Inserir Visita</div>
+      <div class="tab" onclick="openTab('relatorios')">Relatórios</div>
+  </div>
+
+  <!-- Seção de cadastro de cliente -->
+  <div class="form-section" id="cadastroCliente" style="display: block;">
+      <h2>Cadastrar Cliente</h2>
+      <label for="nomeCliente">Nome do Cliente:</label>
+      <input type="text" id="nomeCliente" placeholder="Insira o nome do cliente" required>
+      <button onclick="cadastrarCliente()">Cadastrar Cliente</button>
+  </div>
+
+  <!-- Seção de inserção de visita -->
+  <div class="form-section" id="dadosVisita">
+      <h2>Inserir Dados da Visita</h2>
+      <label for="cliente">Selecionar Cliente:</label>
+      <select id="cliente">
+          <option value="">Selecione um cliente</option>
+      </select>
+
+      <label for="dataVisita">Data da Visita:</label>
+      <input type="date" id="dataVisita" required>
+
+      <label for="pontos">Quantidade de Pontos:</label>
+      <input type="number" id="pontos" placeholder="Insira a quantidade de pontos" required>
+
+      <button onclick="gerarCampos()">Gerar Campos</button>
+
+      <form id="formPontos"></form>
+
+      <button onclick="salvarDados()">Salvar Dados da Visita</button>
+  </div>
+
+  <!-- Relatórios -->
+  <div class="form-section" id="relatorios">
+      <h2>Gerar Relatório</h2>
+      <label for="clienteRelatorio">Selecionar Cliente:</label>
+      <select id="clienteRelatorio">
+          <option value="">Selecione um cliente</option>
+      </select>
+
+      <label for="dataInicio">Data Início:</label>
+      <input type="date" id="dataInicio">
+
+      <label for="dataFim">Data Fim:</label>
+      <input type="date" id="dataFim">
+
+      <button onclick="gerarRelatorio()">Gerar Relatório</button>
+      <div id="resultadoRelatorio"></div>
+  </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input, select, button {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.form-section {
+  display: none;
+}
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+.tab.active {
+  background-color: #ccc;
+}
+.tabs-container {
+  margin-bottom: 20px;
+}
